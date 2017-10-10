@@ -1,7 +1,19 @@
 doctype html
 html
   head
-    title= title
+    title #{title} | Login System
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    block content
+    header
+      nav
+        li
+          a(href='/members') Members
+        li
+          a(href='/about') About
+        div.menu-right
+          li
+            a(href='/register') Register
+          li
+            a(href='/login') Login
+      section.container
+        block content
