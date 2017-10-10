@@ -34,3 +34,15 @@ li a:hover{
 .menu-right{
 	margin-left: 85%;
 }
+
+.active{
+	background-color: #eee;
+	color: #000;
+}
+
+.login{
+	border: 1px solid #fff;
+	border-radius: 5px;
+	height: 12px;
+	margin: 2px auto;
+}

@@ -7,13 +7,13 @@ html
     header
       nav
         li
-          a(href='/members') Members
-        li
-          a(href='/about') About
+          a(href='/users/members' class=(title == 'Members Area' ? 'active' : '')) Members
+        li(class='active')
+          a(href='/about' class=(title == 'About Us' ? 'active' : '')) About
         div.menu-right
           li
-            a(href='/users/register') Register
+            a(href='/users/register' class=(title == 'Register' ? 'active' : '')) Register
           li
-            a(href='/users/login') Login
+            a(class="login" href='/users/login') Login
       section.container
         block content
