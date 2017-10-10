@@ -3,11 +3,14 @@ extends layout
 block content
     h1 Register
 
-    form(action='/action_page.php')
+    form(method="post" action='/users/register')
         .contain
             label
             b Email
             input(type='text', placeholder='Enter Email', name='email', required='')
+            label
+            b Choose Username
+            input(type='text', placeholder='Enter Username', name='username', required='')
             label
             b Password
             input(type='password', placeholder='Enter Password', name='psw', required='')

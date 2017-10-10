@@ -6,6 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var flash = require('connect-flash');
 var expressValidator = require('express-validator');  
+var mongoose = require('mongoose');
+
+mongoose.connection.openUri('mongodb://localhost:3000/CompleteLoginSystem');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
