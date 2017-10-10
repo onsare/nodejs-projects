@@ -22,7 +22,7 @@ Upcoming Features
 
 ##Installation
 Download latest booksapi release:
-BetBoy repository is available on [github](https://github.com/jacekm-git/BetBoy).
+BetBoy repository is available on [github](https://github.com/onsare/nodejs-projects/booksapi).
 
 Before you can run booksApi. You need to change into the cloned repo and run npm install to install all the dependencies.
 
