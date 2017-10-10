@@ -1,4 +1,22 @@
 extends layout
 
 block content
-    p this is the login page
+    h1 Login
+
+    form(action='/action_page.php')
+        .imgcontainer
+            img.avatar(src='/images/avatar.png', alt='Avatar')
+        .contain
+            label
+            b Username
+            input(type='text', placeholder='Enter Username', name='uname', required='')
+            label
+            b Password
+            input(type='password', placeholder='Enter Password', name='psw', required='')
+            button(type='submit') Login
+            input(type='checkbox', checked='checked')
+            |  Remember me
+        .container(style='background-color:#f1f1f1')
+            span.psw
+            | Forgot 
+            a(href='#') password?
