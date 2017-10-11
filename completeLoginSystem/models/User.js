@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+var bcrypt = require('bcrypt');
 var User = mongoose.model('User',{
     email:{
         type: String,
@@ -18,5 +18,10 @@ var User = mongoose.model('User',{
 module.exports = User;
 
 module.exports.createUser = function(user, callback){
-    User.create(user, callback);
+    bcrypt.hash(user.password, 10, function(err, hash){
+        if (err) throw err;
+        user.password = hash;
+        User.create(user, callback);
+    })
+    
 }

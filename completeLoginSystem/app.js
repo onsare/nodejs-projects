@@ -9,6 +9,7 @@ var flash = require('connect-flash');
 var expressValidator = require('express-validator');  
 var mongodb = require('mongodb');
 var mongoose = require('mongoose');
+var bcrypt = require('bcrypt');
 
 mongoose.connection.openUri('mongodb://localhost/CompleteLoginSystem');
 
@@ -42,6 +43,7 @@ app.use(function(req, res, next){
   res.locals.messages = require('express-messages')(req, res);
   next();
 });
+
 
 app.use('/', index);
 app.use('/users', users);
