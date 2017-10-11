@@ -2,8 +2,8 @@ extends layout
 
 block content
     h1 Register
-
-    form(method="post" action='/users/register')
+    
+    form(method="post", action='/users/register')
         .contain
             label
             b Email
@@ -13,10 +13,10 @@ block content
             input(type='text', placeholder='Enter Username', name='username', required='')
             label
             b Password
-            input(type='password', placeholder='Enter Password', name='psw', required='')
+            input(type='password', placeholder='Enter Password', name='password', required='')
             label
             b Repeat Password
-            input(type='password', placeholder='Repeat Password', name='psw-repeat', required='')
+            input(type='password', placeholder='Repeat Password', name='passwordConfirmation', required='')
             input(type='checkbox', checked='checked')
             |  Remember me
             p

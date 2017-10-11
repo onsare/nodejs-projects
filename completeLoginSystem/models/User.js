@@ -16,3 +16,7 @@ var User = mongoose.model('User',{
 });
 
 module.exports = User;
+
+module.exports.createUser = function(user, callback){
+    User.create(user, callback);
+}

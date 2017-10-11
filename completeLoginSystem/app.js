@@ -4,11 +4,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 var flash = require('connect-flash');
 var expressValidator = require('express-validator');  
+var mongodb = require('mongodb');
 var mongoose = require('mongoose');
 
-mongoose.connection.openUri('mongodb://localhost:3000/CompleteLoginSystem');
+mongoose.connection.openUri('mongodb://localhost/CompleteLoginSystem');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -28,9 +30,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}))
+
 app.use(flash());
 app.use(function(req, res, next){
-  var messages = require('express-messages')
+  res.locals.messages = require('express-messages')(req, res);
   next();
 });
 

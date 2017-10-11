@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const { check, validationResult } = require('express-validator/check');
 const { matchedData, sanitize } = require('express-validator/filter');
+var User = require('../models/User');
 
 
 /* GET users listing. */
@@ -18,38 +19,47 @@ router.get('/register', function(req, res, next){
   res.render('register', { title: 'Register' });
 });
 
-router.post('/register', function(req, res, next){
-  var email = req.body.email;
-  var username = req.body.username;
-  var password = req.body.psw;
-  var password_repeat = req.body.psw-repeat;
-
-
-  req.checkBody('email','Email is require').notEmpty();
-  req.checkBody('username','Username is required').notEmpty();
-  req.password('password','Password is required').notEmpty();
-  password_repeat('password_repeat','Password did not match').isEqual(req.body.password);
-
-  var errors = validationErrors();
-
-  if (errors){
+router.post('/register',[
+  check('email')
+    .exists()
+    .isEmail().withMessage('must be an email')
+    .trim()
+    .normalizeEmail(),
+  check('username','should not be empty')
+    .exists()
+    .trim(),
+  check('password', 'passwords must be at least 5 chars long and contain one number')
+    .isLength({ min: 5 })
+    .matches(/\d/),
+  check('passwordConfirmation', 'passwords do not match')
+    .exists()
+    .custom((passwordConfirmation, { req }) => passwordConfirmation === req.body.password),
+], (req, res, next) => {
+  // Get the validation result whenever you want; see the Validation Result API for all options!
+  const errors = validationResult(req);
+  const user = matchedData(req);
+  if (!errors.isEmpty()) {
+    return res.status(422).json({ errors: errors.mapped() });
     res.render('register',{
-      errors: errors,
-      email: email,
-      username: username
-    })
-  }else{
-    var user = {
-      email: email,
-      username: username,
-      password: password
-    }
-
-    User.createUser(user, function(err, user){
-        if(err) throw err;
-        console.log('New user created: ', user);
+      errors   : errors,
+      email    : user.email,
+      username : user.username
     });
+  } else {
+ 
+    console.log(user);
+    User.createUser(user, function(err, user){
+         if(err) throw err;
+        console.log('New user created: ', user);
+
+     req.flash('success','You have registered successfully');
+     res.redirect('/users/login');
+    });
+
+   
+    
   }
+
 });
 
 router.get('/members', function(req, res, next){
