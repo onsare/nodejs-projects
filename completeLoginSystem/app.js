@@ -10,6 +10,8 @@ var expressValidator = require('express-validator');
 var mongodb = require('mongodb');
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
 mongoose.connection.openUri('mongodb://localhost/CompleteLoginSystem');
 
@@ -44,6 +46,8 @@ app.use(function(req, res, next){
   next();
 });
 
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', index);
 app.use('/users', users);

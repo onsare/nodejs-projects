@@ -3,16 +3,16 @@ extends layout
 block content
     h1 Login
 
-    form(action='/action_page.php')
+    form(method ='post', action ='/users/login')
         .imgcontainer
             img.avatar(src='/images/avatar.png', alt='Avatar')
         .contain
             label
             b Username
-            input(type='text', placeholder='Enter Username', name='uname', required='')
+            input(type='text', placeholder='Enter Username', name='username', required='')
             label
             b Password
-            input(type='password', placeholder='Enter Password', name='psw', required='')
+            input(type='password', placeholder='Enter Password', name='password', required='')
             button(type='submit') Login
             input(type='checkbox', checked='checked')
             |  Remember me
