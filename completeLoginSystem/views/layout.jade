@@ -10,12 +10,14 @@ html
           a(href='/users/members' class=(title == 'Members Area' ? 'active' : '')) Members
         li(class='active')
           a(href='/about' class=(title == 'About Us' ? 'active' : '')) About
-        li
-          a(href='/users/register' class=(title == 'Register' ? 'active' : '')) Register
-        li
-          a(class="" href='/users/login') Login
-        li
-          a(class="" href='/users/logout') Logout
+        if !user
+          li
+            a(href='/users/register' class=(title == 'Register' ? 'active' : '')) Register
+          li
+            a(class="" href='/users/login') Login
+        if user
+          li
+            a(class="" href='/users/logout') Logout
       section.container
         != messages()
         block content

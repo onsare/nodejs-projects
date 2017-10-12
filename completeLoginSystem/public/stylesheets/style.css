@@ -117,9 +117,28 @@ span.psw {
 }
 
 ul.success li{
-    border-left: 5px solid green;
+    border-left: 5px solid #4CAF50;
     height: 50px;
-    width:100%;
     background: #eee;
     margin-top: 50px;
+    line-height: 50px;
+    padding-left: 10px;
+}
+
+ul.error li{
+    border-left: 5px solid #f44336;
+    height: 50px;
+    background: #eee;
+    margin-top: 50px;
+    line-height: 50px;
+    padding-left: 10px;
+}
+
+ul.info li{
+    border-left: 5px solid #2196F3;
+    height: 50px;
+    background: #eee;
+    margin-top: 50px;
+    line-height: 50px;
+    padding-left: 10px;
 }

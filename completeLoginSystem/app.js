@@ -4,8 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var session = require('express-session');
 var flash = require('connect-flash');
+var session = require('express-session');
 var expressValidator = require('express-validator');  
 var mongodb = require('mongodb');
 var mongoose = require('mongoose');
@@ -33,12 +33,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
 app.use(session({
   secret: 'keyboard cat',
-  resave: false,
   saveUninitialized: true,
-  cookie: { secure: true }
-}))
+  resave: true
+  // cookie: { secure: false }
+}));
 
 app.use(flash());
 app.use(function(req, res, next){
@@ -48,6 +50,11 @@ app.use(function(req, res, next){
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.get('*', function(req, res, next){
+  res.locals.user = req.user || null;
+  next();
+});
 
 app.use('/', index);
 app.use('/users', users);

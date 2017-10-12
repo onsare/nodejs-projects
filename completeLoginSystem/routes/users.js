@@ -98,14 +98,24 @@ router.post('/register',[
   res.redirect('/users/login');
 });
 
-router.get('/members', function(req, res, next){
+router.get('/members', ensureAuthenticated, function(req, res, next){
   res.render('members', { title: 'Members Area' });
 });
 
+function ensureAuthenticated(req, res, next){
+  if(req.isAuthenticated()){
+    return next();
+  }
+  req.flash('info','You need to login to access that page');
+  res.redirect('/users/login');
+  
+}
+
 router.get('/logout', function(req, res, next){
   req.logout();
-  req.flash('success', 'Logout successfully');
+  req.flash('success', 'Logout successful');
   res.redirect('/users/login');
+  
 });
 
 module.exports = router;

@@ -39,5 +39,5 @@ module.exports.findUserByUsername = function(username, callback){
 }
 
 module.exports.findUserById = function(id, callback){
-    User.findById(id);
+    User.findById(id, callback);
 }
