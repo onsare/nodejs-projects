@@ -12,6 +12,7 @@ block content
 						h2 #{post.title}
 						p Posted by: #{post.author} #{moment(post.date).fromNow()}
 						p #{post.body}
+						button(class="btn btn-success") Read More
 		else
 			p There is nothing to display
 		

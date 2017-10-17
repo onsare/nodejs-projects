@@ -96,3 +96,18 @@ nav li a:hover{
 	color: #fff;
 	padding: 10px;
 }
+
+.btn{
+	outline: none;
+	border: none;
+	width: 100%;
+	padding: 16px;
+}
+.btn-success{
+	color: #fff;
+	background-color: #E91E63;
+	margin: 5px;
+}
+.padding{
+	padding:10px;
+}
