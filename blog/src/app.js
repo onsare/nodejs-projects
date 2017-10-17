@@ -4,6 +4,8 @@ const morgan = require('morgan');
 const flash = require('connect-flash');
 const path = require('path');
 
+const config = require('./config/config');
+
 const app = express();
 
 //setup view engine
@@ -15,7 +17,14 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
+//routes
 
-app.listen(3000, () => {
-	console.log('App listening on http://localhost:3000')
+const index = require('./routes/index');
+
+app.use('/', index);
+
+
+
+app.listen(config.port, () => {
+	console.log(`App listening on http://localhost:${config.port}`);
 });
