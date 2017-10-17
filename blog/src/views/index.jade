@@ -4,11 +4,14 @@ block content
 	.container
 		if posts
 			h1 Recent Posts
+			.row
 			each post, i in posts
-				.row
-					div
+				div.card.col-md-4
+					img(src="images/noimage.jpg")
+					div.contents
 						h2 #{post.title}
-						p Posted by: #{post.author} on #{post.date}
+						p Posted by: #{post.author} #{moment(post.date).fromNow()}
 						p #{post.body}
-		p There is nothing to display
+		else
+			p There is nothing to display
 		

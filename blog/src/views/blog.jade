@@ -3,3 +3,16 @@ extends base
 block content
 
 	h1 Blog
+
+	if posts
+		each post, i in posts
+			row
+				div.card
+					img(src="images/noimage.jpg")
+					.contents
+						h2 #{post.title}
+						p Posted by #{post.author} #{moment(post.date).fromNow()}
+						p #{post.body}
+
+	else
+		p There are no posts to diplay

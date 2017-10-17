@@ -28,7 +28,13 @@ router.get('/contact', function(req, res, next){
 });
 
 router.get('/blog', function(req, res, next){
-	res.render('blog', {title: 'Blog'});
+	posts.find({},{}, function(err, posts){
+		if (err) throw "Oops! connection failed";
+		res.render('blog', {
+			title: "Blog",
+			posts: posts
+		})
+	})
 });
 
 module.exports = router;

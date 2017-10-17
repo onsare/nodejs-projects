@@ -17,6 +17,11 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// app.use('*', function(req, res, next){
+// 	res.locals.moment = require('moment');
+// 	next();
+// })
+app.locals.moment = require('moment');
 //routes
 
 const index = require('./routes/index');

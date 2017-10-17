@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: HelveticaNue;
-    src: url(../fonts/HelveticaNeue-Light.otf);
+    src: url(../fonts/Helvetica.otf);
 }
 @font-face {
     font-family: HelveticaNue-Medium;
@@ -49,4 +49,50 @@ nav li a:hover{
 .active a{
 	background-color: #fff; 
 	color: #E91E63;
+}
+
+.card{
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	margin-top: 10px;
+}
+
+.col-md-4{
+	float: left;
+    width: 49%;
+    margin-right: 8px;
+    margin-top: 8px;
+}
+
+@media (max-width: 650px) {
+    .col-md-4 {
+        width: 100%;
+        display: block;
+    }
+}
+
+.row::after{
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.contents{
+	padding: 16px;
+}
+
+.card img{
+	width: 100%;
+}
+
+#scrollTop{
+	position: fixed;
+	bottom: 16px;
+	right:16px;
+	display: none;
+	border-radius: 5px;
+	background-color: #E91E63;
+	color: #fff;
+	padding: 10px;
 }
