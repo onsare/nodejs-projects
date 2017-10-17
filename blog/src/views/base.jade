@@ -6,13 +6,13 @@ html
 		link(rel="stylesheet", type="text/css", href="./css/styles.css")
 body
 	nav
-		li 
+		li(class=(title === 'Home'? 'active' : '')) 
 			a(href="/") Home
-		li
+		li(class=(title === 'About'? 'active' : ''))
 			a(href="/about") About
-		li
+		li(class=(title === 'Blog'? 'active' : ''))
 			a(href="/blog") Blog
-		li 
+		li(class=(title === 'Contact'? 'active' : '')) 
 			a(href="/contact") Contact
 	.container
 		block content

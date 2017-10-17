@@ -46,3 +46,7 @@ nav li a:hover{
 	background-color: #fff; 
 	color: #E91E63;
 }
+.active a{
+	background-color: #fff; 
+	color: #E91E63;
+}
