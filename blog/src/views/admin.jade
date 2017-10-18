@@ -4,15 +4,28 @@ html
 		title Admin | Nodejs blog system
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 		link(rel="stylesheet", type="text/css", href="/css/admin.css")
+		link(rel="stylesheet", type="text/css", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
 body
 	nav
+		li(class="logo")
+			a(href="/") LOGO
 		li(class=(title === 'Dashboard'? 'active' : '')) 
-			a(href="/") Dashboard
+			a(href="/") 
+				i(class="fa fa-th icon") 
+				span Dashboard
 		li(class=(title === 'Posts'? 'active' : ''))
-			a(href="/about") Posts
+			a(href="/posts") 
+				i(class="fa fa-clipboard icon") 
+				span Posts
 		li(class=(title === 'Categories'? 'active' : ''))
-			a(href="/about") Categories
+			a(href="/category") 
+				i(class="fa fa-puzzle-piece icon") 
+				span Categories
 		li(class=(title === 'Media'? 'active' : ''))
-			a(href="/blog") Media
+			a(href="/media") 
+				i(class="fa fa-picture-o icon") 
+				span Media
 		li(class=(title === 'Contact'? 'active' : '')) 
-			a(href="/contact") Settings
+			a(href="/settings") 
+				i(class="fa fa-sliders icon") 
+				span Settings
