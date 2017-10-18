@@ -1,0 +1,10 @@
+extends base
+
+block content
+
+	div.card
+		img(src="/images/noimage.jpg")
+		.contents
+			h2 #{post.title}
+			p posted in #{post.category} by #{post.author} #{moment(post.date).fromNow()}
+			p #{post.body}

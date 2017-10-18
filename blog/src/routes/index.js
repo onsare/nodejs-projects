@@ -8,12 +8,25 @@ var posts = db.get('posts');
 posts.find({},{}, function(err, posts){
 	if (err) throw "Connection to db failed";
 
-	router.get('/', function(req, res, next){
-	res.render('index', {
-		title: 'Home',
-		posts: posts
+		router.get('/', function(req, res, next){
+			res.render('index', {
+				title: 'Home',
+				posts: posts
+			});
 	});
+
 });
+
+router.get('/blog/single/:id', function(req, res){
+	posts.findOne({_id:req.params.id}, function(err, post){
+		if (err) throw err;
+		res.render('single', {
+			title: post.title,
+			post: post
+		});
+
+		console.log(post);
+	});
 
 });
 
