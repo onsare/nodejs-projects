@@ -25,8 +25,10 @@ app.locals.moment = require('moment');
 //routes
 
 const index = require('./routes/index');
+const admin = require('./routes/admin');
 
 app.use('/', index);
+app.use('/admin', admin);
 
 
 

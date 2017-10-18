@@ -1,0 +1,18 @@
+doctype
+html
+	head
+		title Admin | Nodejs blog system
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		link(rel="stylesheet", type="text/css", href="/css/admin.css")
+body
+	nav
+		li(class=(title === 'Dashboard'? 'active' : '')) 
+			a(href="/") Dashboard
+		li(class=(title === 'Posts'? 'active' : ''))
+			a(href="/about") Posts
+		li(class=(title === 'Categories'? 'active' : ''))
+			a(href="/about") Categories
+		li(class=(title === 'Media'? 'active' : ''))
+			a(href="/blog") Media
+		li(class=(title === 'Contact'? 'active' : '')) 
+			a(href="/contact") Settings

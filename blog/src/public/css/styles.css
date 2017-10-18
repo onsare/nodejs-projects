@@ -122,6 +122,7 @@ nav li a:hover{
 
 form{
 	width:100%;
+	
 }
 
 input[type='text']{
@@ -135,4 +136,5 @@ textarea{
 	width:100%;
 	padding:13px;
 	margin: 10px 0;
+font-family: HelveticaNue;
 }
