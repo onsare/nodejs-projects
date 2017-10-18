@@ -4,4 +4,20 @@ block content
 
 	h1 Contact Us
 
+	div.card.contents
+
+		form(action="/contact/message", method="post")
+			label Name
+			br
+			input(type='text', placeholder="Enter your name", required)
+			br
+			label Subject 
+			br
+			input(type="text", placeholder="Enter subject")
+			br
+			label Message 
+			br
+			textarea(rows="10" placeholder="Enter your message here")
+			br
+			input(class="btn btn-success" type="submit", value="Send")
 	

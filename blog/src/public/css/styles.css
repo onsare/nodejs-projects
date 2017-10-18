@@ -119,3 +119,20 @@ nav li a:hover{
 .padding{
 	padding:10px;
 }
+
+form{
+	width:100%;
+}
+
+input[type='text']{
+	width:100%;
+	padding:13px;
+	margin:10px 0;
+
+}
+
+textarea{
+	width:100%;
+	padding:13px;
+	margin: 10px 0;
+}
