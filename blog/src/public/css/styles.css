@@ -95,6 +95,8 @@ nav li a:hover{
 	background-color: #E91E63;
 	color: #fff;
 	padding: 10px;
+	border: none;
+	outline: none;
 }
 
 .btn{
