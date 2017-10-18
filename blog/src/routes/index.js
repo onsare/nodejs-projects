@@ -16,7 +16,7 @@ posts.find({},{}, function(err, posts){
 	});
 
 });
-
+//find single post by id
 router.get('/blog/single/:id', function(req, res){
 	posts.findOne({_id:req.params.id}, function(err, post){
 		if (err) throw err;
@@ -29,8 +29,19 @@ router.get('/blog/single/:id', function(req, res){
 	});
 
 });
+//find all posts by their category
 
+router.get('/posts/:category', function(req, res){
+	posts.find({category: req.params.category}, function(err, posts){
+		if (err) throw err;
+		res.render('category',{
+			title: req.params.category,
+			posts: posts
+		})
 
+		console.log(posts);
+	})
+});
 
 router.get('/about', function(req, res, next){
 	res.render('about', {title: 'About'});

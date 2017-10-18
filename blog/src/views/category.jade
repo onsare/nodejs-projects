@@ -1,0 +1,18 @@
+extends base
+
+block content
+	h1 #{title}
+	if posts
+		each post, i in posts
+			div.card
+				img(src="/images/noimage.jpg")
+				.contents
+					h2 #{post.title}
+					p posted by #{post.author} #{moment(post.date).fromNow()}
+					p #{post.body}
+
+	else
+		p There are no posts in this category
+		
+
+
