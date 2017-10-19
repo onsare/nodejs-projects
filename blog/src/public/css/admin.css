@@ -19,7 +19,7 @@ body{
 }
 nav{
 	background-color: #E91E63;
-	width:200px;
+	width:15%;
 	height: 100%;
 	position: fixed;
 	box-shadow: 0 8px 5px 4px rgba(0, 0, 0, 0.2);
@@ -49,3 +49,44 @@ nav li a{
 	padding-right: 16px; 
 }
 
+.container{
+	margin-left:15%;
+	width: 85%;
+}
+.row{
+	width:100%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.search{
+	background-color: #fff;
+	
+	/*padding:16px;*/
+}
+
+.search input[type='text']{
+	width: 50%;
+	padding:16px;
+	font-size: 16px;
+	font-family: HelveticaNue-Medium;
+	outline: none;
+	border: none;
+	background-image: url('../images/searchicon.png');
+    background-position: 15px 10px; 
+    background-repeat: no-repeat;
+}
+
+.col-half{
+	float: left;
+	width:50%;
+}
+.notification{
+	background-color: #fff;
+	padding:16px;
+	
+}

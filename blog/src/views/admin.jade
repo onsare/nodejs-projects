@@ -1,7 +1,7 @@
 doctype
 html
 	head
-		title Admin | Nodejs blog system
+		title #{title} | Nodejs blog system
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 		link(rel="stylesheet", type="text/css", href="/css/admin.css")
 		link(rel="stylesheet", type="text/css", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
@@ -10,22 +10,32 @@ body
 		li(class="logo")
 			a(href="/") LOGO
 		li(class=(title === 'Dashboard'? 'active' : '')) 
-			a(href="/") 
+			a(href="/admin/dashboard") 
 				i(class="fa fa-th icon") 
 				span Dashboard
 		li(class=(title === 'Posts'? 'active' : ''))
-			a(href="/posts") 
+			a(href="/admin/posts") 
 				i(class="fa fa-clipboard icon") 
 				span Posts
 		li(class=(title === 'Categories'? 'active' : ''))
-			a(href="/category") 
+			a(href="/admin/category") 
 				i(class="fa fa-puzzle-piece icon") 
 				span Categories
 		li(class=(title === 'Media'? 'active' : ''))
-			a(href="/media") 
+			a(href="/admin/media") 
 				i(class="fa fa-picture-o icon") 
 				span Media
 		li(class=(title === 'Contact'? 'active' : '')) 
-			a(href="/settings") 
+			a(href="/admin/settings") 
 				i(class="fa fa-sliders icon") 
 				span Settings
+	.container
+		.row
+			.col-half
+				div.search
+					form
+						input(type="text" name='search' placeholder="Search...")
+			.col-half
+				div.notification
+					i(class="fa fa-bell")
+		block content

@@ -8,11 +8,16 @@ var posts = db.get('posts');
 router.get('/', function(req, res){
 	res.render('admin', {
 		title: 'Admin Area',
-		
+
 	})
 })
 
-
+router.get('/dashboard', function(req, res){
+	res.render('dashboard', {
+		title: 'Dashboard',
+		
+	})
+})
 
 
 
