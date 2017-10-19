@@ -33,6 +33,13 @@ router.get('/categories', function(req, res){
 	});
 });
 
+router.get('/media', function(req, res){
+	res.render('media', {
+		title: 'Media',
+		
+	});
+});
+
 
 
 
