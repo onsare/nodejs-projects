@@ -11,7 +11,7 @@
 
 body{
 	font-family: HelveticaNue-Medium;
-	background-color: #ccc;
+	background-color: #efeded;
 }
 
 .logo a{
@@ -63,6 +63,7 @@ nav li a{
     display: table;
     clear: both;
 }
+
 .search{
 	background-color: #fff;
 	
@@ -71,13 +72,13 @@ nav li a{
 
 .search input[type='text']{
 	width: 50%;
-	padding:16px;
+	padding:16px 40px;
 	font-size: 16px;
 	font-family: HelveticaNue-Medium;
 	outline: none;
 	border: none;
 	background-image: url('../images/searchicon.png');
-    background-position: 15px 10px; 
+    background-position: 10px 12px; 
     background-repeat: no-repeat;
 }
 
