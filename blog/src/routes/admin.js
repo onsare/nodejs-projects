@@ -41,6 +41,14 @@ router.get('/media', function(req, res){
 });
 
 
+router.get('/settings', function(req, res){
+	res.render('settings', {
+		title: 'Settings',
+		
+	});
+});
+
+
 
 
 module.exports = router;
