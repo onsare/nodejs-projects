@@ -26,6 +26,12 @@ router.get('/posts', function(req, res){
 	});
 });
 
+router.get('/categories', function(req, res){
+	res.render('categories', {
+		title: 'Categories',
+		
+	});
+});
 
 
 
