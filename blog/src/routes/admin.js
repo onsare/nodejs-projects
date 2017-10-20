@@ -51,6 +51,17 @@ router.get('/posts', function(req, res){
 	});
 });
 
+router.get('/posts/new', function(req, res){
+	res.render('new-post', {
+		title: 'Add Post',
+		
+	});
+});
+
+router.post('/posts', function(req, res){
+	//TODO
+});
+
 router.get('/categories', function(req, res){
 	res.render('categories', {
 		title: 'Categories',
