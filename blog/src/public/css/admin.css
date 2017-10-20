@@ -101,6 +101,7 @@ nav li a{
 .panel{
 	float: right;
 	margin:0 auto;
+
 }
 
 .notification:after{
@@ -113,6 +114,7 @@ nav li a{
 	list-style: none;
 	float:left;
 	padding: 16px;
+
 }
 
 .panel img{
@@ -124,9 +126,21 @@ nav li a{
 .panel li .fa{
 	font-size: 27px;
 }
+span.notify.fa.fa-circle{
+	font-size: 10px;
+	position: absolute;
+	margin-top: -7px;
+	margin-left: -10px;
+	color: red;
+
+
+}
 .panel li a{
 	text-decoration: none;
 	
+}
+.panel span{
+	color: grey;
 }
 .username{
 	margin-left: -20px;
@@ -181,6 +195,12 @@ nav li a{
 
 	nav span{
 		display: none;
+	}
+
+	nav .fa{
+		font-size: 30px;
+		padding: 0 auto;
+
 	}
 }
 
