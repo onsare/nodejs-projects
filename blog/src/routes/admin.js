@@ -83,6 +83,12 @@ router.get('/media', function(req, res){
 	});
 });
 
+router.get('/media/new', function(req, res){
+	res.render('new-media', {
+		title: 'Add Media',
+		
+	});
+});
 
 router.get('/settings', function(req, res){
 	res.render('settings', {
