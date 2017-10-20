@@ -25,17 +25,29 @@ body
 			a(href="/admin/media") 
 				i(class="fa fa-picture-o icon") 
 				span Media
-		li(class=(title === 'Contact'? 'active' : '')) 
+		li(class=(title === 'Settings'? 'active' : '')) 
 			a(href="/admin/settings") 
 				i(class="fa fa-sliders icon") 
 				span Settings
 	.container
-		.row
+		.row.dashboard
 			.col-half
 				div.search
 					form
 						input(type="text" name='search' placeholder="Search")
 			.col-half
 				div.notification
-					i(class="fa fa-bell")
+					.panel
+						li
+							a(href="#")
+								span(class="fa fa-bell-o")
+						li
+							a(href="#")
+								img(class="avatar" src="../images/avatar.png" width="35px" height="35px")
+						li
+							a(href="#")
+								span(class="username") Denis Onsare
+						li
+							a
+								span(class="fa fa-caret-down")
 		block content

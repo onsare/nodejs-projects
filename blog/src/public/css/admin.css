@@ -38,6 +38,13 @@ nav a:hover{
 	border-left: 4px solid #0277BD;
 }
 
+.active a{
+	background-color: white;
+	color: #0277BD;
+	border-left: 4px solid #0277BD;
+
+}
+
 nav li a{
 	display: block;
 	text-decoration: none;
@@ -71,14 +78,14 @@ nav li a{
 }
 
 .search input[type='text']{
-	width: 50%;
-	padding:16px 40px;
+	width: 100%;
+	padding:16px 50px;
 	font-size: 16px;
 	font-family: HelveticaNue-Medium;
 	outline: none;
 	border: none;
 	background-image: url('../images/searchicon.png');
-    background-position: 10px 12px; 
+    background-position: 22px 12px; 
     background-repeat: no-repeat;
 }
 
@@ -86,8 +93,60 @@ nav li a{
 	float: left;
 	width:50%;
 }
-.notification{
+.dashboard{
+	height: 51px;
 	background-color: #fff;
-	padding:16px;
+}
+
+.panel{
+	float: right;
+	margin:0 auto;
+}
+
+.notification:after{
+	content:"";
+	clear: both;
+	display: table;
+}
+
+.panel li{
+	list-style: none;
+	float:left;
+	padding: 16px;
+}
+
+.panel img{
+	border-radius: 50%;
+	border:1px solid grey;
+	margin-top: -5px;
+}
+
+.panel li .fa{
+	font-size: 27px;
+}
+.panel li a{
+	text-decoration: none;
 	
+}
+.username{
+	margin-left: -20px;
+}
+
+/*dashboard*/
+
+.title{
+	padding:30px;
+}
+.padding{
+	padding: 10px;
+}
+.col{
+	float: left;
+	width: 45%;
+}
+
+.card{
+	background-color: #fff;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	margin-left: 30px;
 }
