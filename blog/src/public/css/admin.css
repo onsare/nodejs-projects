@@ -135,18 +135,53 @@ nav li a{
 /*dashboard*/
 
 .title{
-	padding:30px;
+	padding-left:30px;
+	padding-top: 30px;
+
 }
 .padding{
 	padding: 10px;
-}
-.col{
-	float: left;
-	width: 45%;
 }
 
 .card{
 	background-color: #fff;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-	margin-left: 30px;
+	margin: 20px;
 }
+
+.contain{
+	width:1080px;
+	/*margin:0 auto;*/
+}
+
+.column{
+	float: left;
+	/*width:50px;*/
+}
+
+.left{
+	width:50%;
+}
+
+.right{
+	width:50%;
+}
+
+.dash{
+	width: 25%;
+}
+
+@media(max-width: 1000px){
+	.column{
+		width: 100%;
+	}
+	.user, .account{
+		display: none;
+	}
+
+	nav span{
+		display: none;
+	}
+}
+
+
