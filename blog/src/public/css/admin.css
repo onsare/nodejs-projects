@@ -123,6 +123,15 @@ nav li a{
 	margin-top: -5px;
 }
 
+/*.avatar{
+	background: url(../images/avatar.png);
+	width: 35px;
+	height: 35px;
+	border:1px solid grey;
+	margin-top: -5px;
+	border-radius: 50%;
+}*/
+
 .panel li .fa{
 	font-size: 27px;
 }
