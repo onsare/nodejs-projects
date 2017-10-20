@@ -4,6 +4,7 @@ var config = require('../config/config');
 var db = require('monk')(config.DB_URI);
 
 var posts = db.get('posts');
+var categories = db.get('categories');
 
 router.get('/', function(req, res){
 	res.render('admin', {
@@ -12,12 +13,36 @@ router.get('/', function(req, res){
 	});
 });
 
-router.get('/dashboard', function(req, res){
-	res.render('dashboard', {
-		title: 'Dashboard',
-		
+
+posts.find({},{}, function(err, posts){
+	if(err) throw "Erro occured while retriving posts";
+	var countPosts = function(){
+		return posts.length;
+	}
+
+	categories.find({}, function(err, categories){
+		if (err) throw "could not get categories";
+		var countCat = function(){
+			return categories.length;
+		}
+		console.log("counting categories in db", countCat());
+
+		router.get('/dashboard', function(req, res){
+			res.render('dashboard', {
+				title: 'Dashboard',
+				posts: posts,
+				numOfPosts: countPosts(),
+				numOfCategories: countCat()
+			
+			});
+		});
+	
 	});
-});
+	
+    
+})
+
+
 
 router.get('/posts', function(req, res){
 	res.render('posts', {

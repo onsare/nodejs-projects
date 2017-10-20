@@ -13,18 +13,33 @@ body
 			a(href="/admin/dashboard") 
 				i(class="fa fa-th icon") 
 				span Dashboard
-		li(class=(title === 'Posts'? 'active' : ''))
-			a(href="/admin/posts") 
+		li(class="dropdown")
+			a(href="#") 
 				i(class="fa fa-clipboard icon") 
 				span Posts
-		li(class=(title === 'Categories'? 'active' : ''))
-			a(href="/admin/categories") 
+				div.dropdown-content
+					a(href="/admin/posts")
+						span All Posts
+					a(href="/admin/posts/new")
+						span Add Post
+		li(class="dropdown")
+			a(href="#" class="dropdown")
 				i(class="fa fa-puzzle-piece icon") 
 				span Categories
-		li(class=(title === 'Media'? 'active' : ''))
-			a(href="/admin/media") 
+				div.dropdown-content
+					a(href="/admin/categories")
+						span All Categories
+					a(href="/admin/category/add")
+						span Add Category
+		li(class="dropdown")
+			a(href="#" class="dropdown") 
 				i(class="fa fa-picture-o icon") 
 				span Media
+				div.dropdown-content
+					a(href="/admin/media")
+						span All Media
+					a(href="/admin/media/new")
+						span Add Media
 		li(class=(title === 'Settings'? 'active' : '')) 
 			a(href="/admin/settings") 
 				i(class="fa fa-sliders icon") 
