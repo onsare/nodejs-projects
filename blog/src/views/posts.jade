@@ -2,4 +2,48 @@ extends admin
 
 block content
 
-	h2.title Posts
+	div.row 
+		h2.title Posts 
+			a(href="/admin/posts/new") Add New
+
+	div.row
+		div.column.full
+			div.card.padding
+				p All (7) 
+				form
+					select(name='category')
+						option(value='All Categories') All Categories
+						option(value='technology') Technology
+						option(value='marketing') Marketing
+					button Filter
+				div
+					
+					table
+
+						tr
+							td 
+								input(type='checkbox') 
+							th Title 
+							th Author
+							th Categories
+							th Tags
+							th Comments
+							th Date
+						tr
+							td 
+								input(type='checkbox')
+							td Marketing 101
+							td Denis Onsare
+							td Marketing
+							td Marketing
+							td 0
+							td 22/10/2017
+						tr
+							td 
+								input(type='checkbox')
+							th Title 
+							th Author
+							th Categories
+							th Tags
+							th Comments
+							th Date

@@ -2,4 +2,18 @@ extends admin
 
 block content
 
-	h2.title Add New
+	h2.title Add New Post
+	div.row
+		div.column.three-quarter
+			div.card.padding.new-post
+				input(type='text' placeholder='Enter Title Here')
+				textarea(style='300px', name='body', id='editor')
+					
+
+	script.
+		ClassicEditor
+		.create( document.querySelector( '#editor' ) )
+		.catch( error => {
+		console.error( error );
+		} );
+

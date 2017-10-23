@@ -7,23 +7,51 @@ block content
 	div.row
 		div
 			div.column.dash
-				div.card.padding
-					h2 Posts
+				div.card.padding.dash-inner.bg-aqua
+					p Posts
 					span(class="fa fa-clipboard")
-					span #{numOfPosts}
+					h3 #{numOfPosts}
+					a(href="#" class="details") More Info &#10095;&#10095;
 			div.column.dash
-				div.card.padding
-					h2 Categories
+				div.card.padding.dash-inner.bg-yellow
+					p Categories
 					span(class="fa fa-puzzle-piece")
-					span #{numOfCategories}
+					h3 #{numOfCategories}
+					a(href="#" class="details") More Info &#10095;&#10095;
 			div.column.dash
-				div.card.padding
-					h2 Comments
+				div.card.padding.dash-inner.bg-red
+					p Comments
 					span(class="fa fa-comment")
-					span 0
+					h3 0
+					a(href="#" class="details") More Info &#10095;&#10095;
 			div.column.dash
-				div.card.padding
-					h2 Visitors
-					span(class="fa fa-users")
-					span 0
-			
+				div.card.padding.dash-inner.bg-green
+					p Visitors
+					span(class="fa fa-line-chart")
+					h3 0
+					a(href="#" class="details") More Info &#10095;&#10095;
+
+	div
+		div.column.left
+			div.card.padding
+				.box.box-info
+					.box-header.with-border
+						h3.box-title Line Chart
+						
+					.box-body
+						.chart
+							canvas#lineChart(style='height:250px')
+		div.column.right
+			div.card.padding
+				.box.box-primary
+					.box-header.with-border
+						h3.box-title Area Chart
+						
+					.box-body
+						.chart
+							canvas#areaChart(style='height:250px')
+
+	script(src="/plugins/chartjs/Chart.min.js")
+	script(src="/js/line-chart.js")
+
+					

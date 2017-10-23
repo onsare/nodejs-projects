@@ -53,7 +53,7 @@ router.get('/posts', function(req, res){
 
 router.get('/posts/new', function(req, res){
 	res.render('new-post', {
-		title: 'Add Post',
+		title: 'Posts',
 		
 	});
 });
@@ -71,7 +71,7 @@ router.get('/categories', function(req, res){
 
 router.get('/categories/new', function(req, res){
 	res.render('new-category', {
-		title: 'Add Categories',
+		title: 'Categories',
 		
 	});
 });
@@ -85,7 +85,7 @@ router.get('/media', function(req, res){
 
 router.get('/media/new', function(req, res){
 	res.render('new-media', {
-		title: 'Add Media',
+		title: 'Media',
 		
 	});
 });
