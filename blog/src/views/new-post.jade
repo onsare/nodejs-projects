@@ -9,6 +9,31 @@ block content
 				input(type='text' placeholder='Enter Title Here')
 				textarea(style='300px', name='body', id='editor')
 					
+		div.column.quater
+			div.card.padding.publish
+				h2 Publish
+				hr
+				button Save Draft
+				button Preview
+				button Publish
+
+			div.card.padding
+				h2 Categories
+				hr
+				form
+
+					input(type='checkbox' value='technology')
+					label Technology
+					br
+					input(type='checkbox' value='marketing')
+					label Marketing
+			div.card.padding
+				h2 Tags
+				input(type='text')
+				button Add
+			div.card.padding
+				h2 Featured Image
+				button Set featured image
 
 	script.
 		ClassicEditor

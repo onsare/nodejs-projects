@@ -28,26 +28,17 @@ body
 							span All Posts
 						a(href="/admin/posts/new")
 							span Add Post
-		div.dropdown
-			li(class=(title == "Categories" ? "active" : ""))
-				a(href="/admin/categories")
-					i(class="fa fa-puzzle-piece icon") 
-					span Categories
-					div.dropdown-content
 						a(href="/admin/categories")
-							span All Categories
-						a(href="/admin/categories/new")
-							span Add Category
-		div.dropdown
-			li(class=(title == "Media" ? "active" : ""))
-				a(href="/admin/media") 
-					i(class="fa fa-picture-o icon") 
-					span Media
-					div.dropdown-content
-						a(href="/admin/media")
-							span All Media
-						a(href="/admin/media/new")
-							span Add Media
+							span Categories
+						a(href="/admin/tags")
+							span Tags
+		
+	
+		li(class=(title == "Media" ? "active" : ""))
+			a(href="/admin/media") 
+				i(class="fa fa-picture-o icon") 
+				span Media
+					
 		li(class=(title === 'Settings'? 'active' : '')) 
 			a(href="/admin/settings") 
 				i(class="fa fa-sliders icon") 
@@ -71,9 +62,6 @@ body
 						li(class="user")
 							a(href="#")
 								span(class="username") Denis Onsare
-						li(class="account")
-							a
-								span(class="fa fa-caret-down")
-
+						
 		block content
 
