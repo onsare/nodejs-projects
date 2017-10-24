@@ -337,3 +337,12 @@ button{
 	-webkit-transform{translate: (50%, 50%)}
 
 }
+.mediaLibrary{
+	border: 1px solid grey;
+}
+.mediaLibrary img{
+	width:100%;
+}
+.mediaLibrary table tr{
+	width: 20%;
+}
