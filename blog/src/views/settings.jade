@@ -10,15 +10,15 @@ block content
 			div.card.padding.settings
 				form
 					label Username
-					input(type='text')
+					input(type='text' name='username')
 					label Email
-					input(type='text' disabled)
+					input(type='text' name='email' disabled)
 					label Bio
-					textarea()
+					textarea(rows='10' name='textarea')
 					label Password
-					input(type='password')
+					input(type='password' name='password')
 					label Confirm password
-					input(type='password')
+					input(type='password' name='password_repeat')
 					label Profile Image
-					input(type='file')
+					input(type='file' name='profileImage')
 					button Save
