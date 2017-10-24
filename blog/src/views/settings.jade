@@ -3,3 +3,22 @@ extends admin
 block content
 
 	h2.title Settings
+
+	div.row
+		div.column.full
+
+			div.card.padding.settings
+				form
+					label Username
+					input(type='text')
+					label Email
+					input(type='text' disabled)
+					label Bio
+					textarea()
+					label Password
+					input(type='password')
+					label Confirm password
+					input(type='password')
+					label Profile Image
+					input(type='file')
+					button Save

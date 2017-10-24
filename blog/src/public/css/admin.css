@@ -318,3 +318,9 @@ button{
 	height: 300px;
 	padding:10px 30px;
 }
+
+.settings input[type=text], textarea, input[type=password], .settings button{
+	width:100%;
+	padding:10px;
+	margin: 10px 0;
+}
