@@ -327,14 +327,13 @@ button{
 
 .dragArea{
 	border:5px dashed grey;
-	height: 100px;
+	height: 150px;
 	margin:0 auto;
 }
 
-.dragArea p{
-	margin: auto;
-	line-height: 100px;
-	-webkit-transform{translate: (50%, 50%)}
+.text{
+	 text-align: center;
+     line-height: 150px;
 
 }
 .mediaLibrary{
@@ -345,4 +344,8 @@ button{
 }
 .mediaLibrary table tr{
 	width: 20%;
+}
+.uploader{
+	display: none;
+	
 }
